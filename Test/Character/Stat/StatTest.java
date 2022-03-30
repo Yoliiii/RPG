@@ -14,23 +14,17 @@ class StatTest {
         stat = new StatMoc(2);
     }
 
-    @AfterEach
-    void tearDown() {
+    @Test
+    void InitialValue_Increase_ReturnInitialValueIncreasedBy1() {
+        int actualValue = stat.getValue();
+        stat.increase();
+        assertEquals(actualValue+1, stat.getValue());
     }
 
     @Test
-    void getValue() {
-    }
-
-    @Test
-    void increase() {
-    }
-
-    @Test
-    void decrease() {
-    }
-
-    @Test
-    void testToString() {
+    void InitialValue_Decrease_ReturnInitialValueDecreasedBy1() {
+        int actualValue = stat.getValue();
+        stat.decrease();
+        assertEquals(actualValue-1, stat.getValue());
     }
 }
